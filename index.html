@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Software sob medida, sistemas corporativos, integração e modernização para empresas. Fale com a Vision Software.">
+<meta name="theme-color" content="#0B1522">
+<title>Vision Software — Software sob medida para empresas</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1522'/%3E%3Cpath d='M14 18l14 30h8l14-30h-9l-9 21-9-21z' fill='%232EB3E8'/%3E%3C/svg%3E">
+
+<!-- Google Ads - tag base (conta 3715335227 / AW-18399561420) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18399561420"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18399561420');
+</script>
+
+<!-- Meta Pixel - base code (pixel 1061255206487231, business VisionSoftware) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1061255206487231');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1061255206487231&ev=PageView&noscript=1"
+/></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vision Software",
+  "legalName": "Vision Software Ltda",
+  "url": "https://visionsoftware.com.br/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Osório de Almeida, 999/101, Poço Rico",
+    "addressLocality": "Juiz de Fora",
+    "addressRegion": "MG",
+    "addressCountry": "BR"
+  },
+  "telephone": "+55 32 99957-5926"
+}
+</script>
+
+<style>
+  /* ==========================================================================
+     Vision Software - Site novo (reconstrucao estatica do design da Manus)
+     Mesmos tokens de marca usados nas paginas 1-4 (DESIGN.md / DIRETRIZES-MARCA)
+     ========================================================================== */
+  :root{
+    --primary:#2EB3E8;
+    --primary-deep:#1580B8;
+    --primary-soft:#BFE6F7;
+
+    --ink:#0B1522;
+    --dark:#081018;
+    --panel:#0E1B2A;
+    --panel-2:#12233A;
+
+    --surface:#F4F8FB;
+    --surface-2:#E9EFF5;
+    --background:#FFFFFF;
+    --foreground:#5A6B7E;
+    --foreground-on-dark:#8FA6BC;
+    --border:#E3EBF2;
+
+    --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+
+    --container:1200px; --container-narrow:760px;
+    --shadow-btn:0 6px 20px rgba(46,179,232,.35);
+    --shadow-btn-hover:0 10px 26px rgba(46,179,232,.45);
+    --shadow-card-hover:0 16px 34px rgba(11,21,34,.08);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:var(--font-sans);font-weight:500;line-height:1.6;
+    color:var(--foreground);background:var(--background);-webkit-font-smoothing:antialiased;
+    padding-bottom:76px;
+  }
+  @media (min-width:641px){ body{padding-bottom:0} }
+  img{max-width:100%;display:block}
+  h1,h2,h3{margin:0;color:inherit}
+  p{margin:0}
+  ul{margin:0;padding:0;list-style:none}
+  a{color:inherit;text-decoration:none}
+  button{font-family:var(--font-sans);cursor:pointer;border:none;background:none}
+
+  :focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+
+  .container{max-width:var(--container);margin-inline:auto;padding-inline:20px}
+  @media (min-width:769px){ .container{padding-inline:40px} }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    border-radius:999px;padding:15px 26px;min-height:52px;
+    font-family:var(--font-mono);font-size:.78rem;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;
+    transition:transform .15s,box-shadow .15s,border-color .15s,color .15s;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-deep) 100%);color:#fff;box-shadow:var(--shadow-btn)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-btn-hover)}
+  .btn-secondary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+  .btn-secondary:hover{border-color:var(--primary);color:var(--primary)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:var(--panel-2)}
+  .btn-block{width:100%}
+
+  .mono-label{
+    font-family:var(--font-mono);font-size:.7rem;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:#6a8296;
+  }
+
+  /* ---------- Header ---------- */
+  .nav{position:sticky;top:0;z-index:40;background:rgba(244,248,251,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav-brand{display:flex;align-items:center;gap:12px}
+  .nav-brand img{width:38px;height:38px;border-radius:999px}
+  .nav-brand .name{font-weight:800;font-size:.95rem;letter-spacing:-.02em;color:var(--ink)}
+  .nav-brand .tag{display:block;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#8091a1;margin-top:2px}
+  .nav-links{display:none;gap:28px;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#5a6b7e}
+  @media (min-width:769px){ .nav-links{display:flex} }
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:none}
+  @media (min-width:641px){ .nav-cta{display:inline-flex;padding:12px 20px;min-height:auto} }
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;background:var(--dark);color:#fff;overflow:hidden;padding-block:56px}
+  @media (min-width:769px){ .hero{padding-block:80px} }
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(60% 55% at 80% 15%,rgba(46,179,232,.18),transparent 70%);
+  }
+  .hero-grid{position:relative;z-index:1;display:grid;gap:40px}
+  @media (min-width:961px){ .hero-grid{grid-template-columns:1.15fr .85fr;gap:56px;align-items:start} }
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--primary);margin-bottom:22px}
+  .hero-eyebrow .dot{width:8px;height:8px;border-radius:999px;background:var(--primary)}
+  .hero h1{
+    font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;
+    max-width:680px;
+  }
+  .hero h1 .accent{color:var(--primary)}
+  .hero .lead{margin-top:22px;max-width:560px;font-size:1.1rem;line-height:1.6;color:var(--foreground-on-dark)}
+  .hero-ctas{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-note{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--foreground-on-dark)}
+  .hero-tags{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:20px}
+  .hero-tags span{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--foreground-on-dark)}
+  .hero-tags .pip{width:6px;height:6px;border-radius:999px;background:var(--primary)}
+
+  /* hero panel (canal direto) */
+  .hero-panel{background:#fff;color:var(--ink);border-radius:20px;padding:26px;box-shadow:0 28px 70px rgba(0,0,0,.3)}
+  .hero-panel-head{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:18px}
+  .hero-panel h2{font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-top:10px}
+  .hero-panel p{margin-top:8px;font-size:.9rem;color:var(--foreground);line-height:1.5}
+  .hero-steps{display:grid;gap:10px;margin-bottom:18px}
+  .hero-step{display:flex;gap:12px;background:var(--surface);border-radius:12px;padding:12px 14px}
+  .hero-step .num{flex-shrink:0;width:26px;height:26px;border-radius:999px;background:var(--ink);color:var(--primary);font-family:var(--font-mono);font-size:.65rem;display:flex;align-items:center;justify-content:center}
+  .hero-step p{margin:0;font-size:.85rem;color:var(--foreground)}
+  .hero-panel-alt{display:block;width:100%;text-align:center;margin-top:14px;font-family:var(--font-mono);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#8091a1;text-decoration:underline;text-underline-offset:4px}
+
+  /* ---------- Stats strip ---------- */
+  .stats-strip{background:var(--ink);border-top:1px solid rgba(255,255,255,.08)}
+  .stats-grid{display:grid;grid-template-columns:repeat(2,1fr)}
+  @media (min-width:641px){ .stats-grid{grid-template-columns:repeat(4,1fr)} }
+  .stats-grid > div{padding:20px 16px;border-right:1px solid rgba(255,255,255,.08)}
+  .stats-grid > div:nth-child(2n){border-right:none}
+  @media (min-width:641px){
+    .stats-grid > div{border-right:1px solid rgba(255,255,255,.08)}
+    .stats-grid > div:last-child{border-right:none}
+    .stats-grid > div:nth-child(2n){border-right:1px solid rgba(255,255,255,.08)}
+  }
+  .stats-grid .n{font-family:var(--font-mono);font-size:.7rem;color:#6a8296}
+  .stats-grid p{margin-top:8px;font-size:.85rem;font-weight:700;color:#fff;max-width:9rem;line-height:1.3}
+
+  /* ---------- Section shells ---------- */
+  .section{padding-block:64px}
+  @media (min-width:769px){ .section{padding-block:96px} }
+  .section-light{background:var(--surface)}
+  .section-alt{background:var(--surface-2)}
+  .section-dark{background:var(--ink);color:#fff}
+  .section-head h2{font-size:clamp(1.6rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.1}
+  .section-head p{margin-top:14px;max-width:640px;color:var(--foreground);font-size:1.05rem;line-height:1.6}
+  .section-dark .section-head p{color:var(--foreground-on-dark)}
+
+  /* ---------- Issue / solution cards ---------- */
+  .cards-2{display:grid;gap:0;margin-top:44px;border-top:1px solid var(--border);border-left:1px solid var(--border)}
+  @media (min-width:641px){ .cards-2{grid-template-columns:1fr 1fr} }
+  .issue-card{border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px}
+  .issue-card .n{font-family:var(--font-mono);font-size:.7rem;color:#6a8296}
+  .issue-card h3{margin-top:32px;font-size:1.2rem;font-weight:800;letter-spacing:-.02em;max-width:16rem}
+  .issue-card p{margin-top:10px;font-size:.9rem;color:var(--foreground);line-height:1.55;max-width:16rem}
+
+  .cards-solutions{display:grid;gap:1px;background:var(--border);border-radius:18px;overflow:hidden;margin-top:44px}
+  @media (min-width:641px){ .cards-solutions{grid-template-columns:1fr 1fr} }
+  .solution-card{background:#fff;padding:30px;transition:background .2s,color .2s}
+  .solution-card:hover{background:var(--ink);color:#fff}
+  .solution-card .top-row{display:flex;justify-content:space-between;align-items:flex-start}
+  .solution-card .code{font-family:var(--font-mono);font-size:.7rem;color:#6a8296}
+  .solution-card:hover .code{color:var(--primary)}
+  .solution-card h3{margin-top:48px;font-size:1.4rem;font-weight:800;letter-spacing:-.03em}
+  .solution-card p{margin-top:10px;max-width:20rem;font-size:.9rem;line-height:1.55;color:var(--foreground)}
+  .solution-card:hover p{color:var(--foreground-on-dark)}
+  .solution-card .cta{margin-top:26px;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+  /* ---------- Process steps ---------- */
+  .steps-list{border-top:1px solid rgba(255,255,255,.15)}
+  .step-row{display:grid;gap:8px;padding-block:24px;border-bottom:1px solid rgba(255,255,255,.15)}
+  @media (min-width:641px){ .step-row{grid-template-columns:60px 1fr;align-items:center;gap:24px} }
+  .step-row .num{font-family:var(--font-mono);font-size:.7rem;color:var(--primary)}
+  .step-row h3{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+  .step-row p{margin-top:6px;max-width:32rem;font-size:.9rem;line-height:1.55;color:var(--foreground-on-dark)}
+
+  /* ---------- Fit checklist ---------- */
+  .fit-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 14px 40px rgba(11,21,34,.06)}
+  .fit-card-head{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:18px}
+  .fit-list{display:grid;gap:16px}
+  .fit-list li{display:flex;gap:10px;font-size:.92rem;line-height:1.55;color:var(--foreground)}
+  .fit-list svg{flex-shrink:0;margin-top:3px}
+  .fit-note{margin-top:24px;background:var(--surface);border-radius:12px;padding:14px 16px;font-size:.85rem;color:var(--foreground);line-height:1.5}
+
+  /* ---------- Form section ---------- */
+  .form-section-grid{display:grid;gap:36px}
+  @media (min-width:961px){ .form-section-grid{grid-template-columns:1fr .85fr;align-items:center;gap:60px} }
+  .form-card{background:var(--surface);border-radius:18px;padding:26px}
+  .form-field{margin-bottom:14px}
+  .form-field label{display:block;font-family:var(--font-mono);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6a8296;margin-bottom:6px}
+  .form-input,.form-textarea{
+    width:100%;min-height:48px;background:#fff;border:1px solid var(--border);border-radius:10px;
+    padding:12px 14px;font-family:var(--font-sans);font-size:.92rem;color:var(--ink);
+  }
+  .form-textarea{min-height:88px;resize:vertical}
+  .form-input:focus,.form-textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(46,179,232,.25)}
+  .form-error{display:none;margin-top:5px;font-size:.78rem;color:#D64545;font-weight:600}
+  .form-error.is-visible{display:block}
+  .form-success{display:none;text-align:center;padding-block:24px}
+  .form-success.is-visible{display:block}
+
+  /* ---------- Footer ---------- */
+  .footer{background:var(--ink);color:var(--foreground-on-dark);padding-block:52px 30px}
+  .footer-grid{display:flex;flex-direction:column;gap:32px}
+  @media (min-width:769px){ .footer-grid{flex-direction:row;justify-content:space-between} }
+  .footer-brand{display:flex;align-items:center;gap:12px}
+  .footer-brand img{width:38px;height:38px;border-radius:999px}
+  .footer-brand .name{color:#fff;font-weight:800;font-size:1rem}
+  .footer-desc{margin-top:16px;max-width:22rem;font-size:.9rem;line-height:1.6}
+  .footer-meta{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:grid;gap:8px}
+  @media (min-width:769px){ .footer-meta{text-align:right} }
+  .footer-meta a{color:var(--primary)}
+
+  /* ---------- Sticky mobile CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:30;
+    display:flex;
+  }
+  @media (min-width:641px){ .sticky-cta{display:none} }
+
+  /* ---------- Reveal animation ---------- */
+  @media (prefers-reduced-motion: no-preference){
+    .js-reveal .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+    .js-reveal .reveal.is-visible{opacity:1;transform:translateY(0)}
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js-reveal')</script>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#inicio" class="nav-brand">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1522'/%3E%3Cpath d='M14 18l14 30h8l14-30h-9l-9 21-9-21z' fill='%232EB3E8'/%3E%3C/svg%3E" alt="Vision Software">
+      <span><span class="name">VISION</span><span class="tag">systems software</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#desafios">Desafios</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#processo">Como funciona</a>
+    </nav>
+    <a class="btn btn-dark nav-cta" href="https://wa.me/5532999575926?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Vision%20Software%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20software." target="_blank" rel="noopener" data-track="whatsapp">Falar no WhatsApp</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="hero-eyebrow"><span class="dot"></span><span class="mono-label" style="color:inherit">Software sob medida para empresas</span></div>
+        <h1>Seu sistema deveria acompanhar a operação — <span class="accent">não limitar</span> o próximo movimento.</h1>
+        <p class="lead">A Vision Software transforma processos críticos, sistemas legados e integrações frágeis em soluções que ajudam sua empresa a operar com mais clareza e controle.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/5532999575926?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Vision%20Software%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20software." target="_blank" rel="noopener" data-track="whatsapp">Falar no WhatsApp</a>
+          <button class="btn btn-secondary" data-scroll-to="diagnostico">Prefiro enviar o contexto</button>
+        </div>
+        <div class="hero-note">Projetos B2B em todo o Brasil</div>
+        <div class="hero-tags">
+          <span><span class="pip"></span>Sistemas corporativos</span>
+          <span><span class="pip"></span>Integração e legado</span>
+          <span><span class="pip"></span>Automação aplicada</span>
+        </div>
+      </div>
+
+      <div class="hero-panel reveal">
+        <div class="hero-panel-head">
+          <span class="mono-label" style="color:#6a8252">Canal direto</span>
+          <h2>Fale sobre seu projeto sem preencher uma ficha longa.</h2>
+          <p>Abra uma conversa com a Vision pelo WhatsApp. A mensagem inicial já chega com o contexto do seu interesse.</p>
+        </div>
+        <div class="hero-steps">
+          <div class="hero-step"><span class="num">01</span><p>Você abre a conversa com uma mensagem inicial pronta.</p></div>
+          <div class="hero-step"><span class="num">02</span><p>A Vision entende a necessidade e orienta o melhor próximo passo.</p></div>
+        </div>
+        <a class="btn btn-primary btn-block" href="https://wa.me/5532999575926?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Vision%20Software%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20software." target="_blank" rel="noopener" data-track="whatsapp">Abrir WhatsApp</a>
+        <button class="hero-panel-alt" data-scroll-to="diagnostico">Prefiro enviar um breve pelo formulário</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div><span class="n">01</span><p>Projetos sob medida</p></div>
+        <div><span class="n">02</span><p>Visão de negócio e tecnologia</p></div>
+        <div><span class="n">03</span><p>Integrações e evolução</p></div>
+        <div><span class="n">04</span><p>Atendimento nacional</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O DIAGNOSTICO -->
+  <section class="section section-light" id="desafios">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="mono-label">01 / O diagnóstico</span>
+        <h2 style="margin-top:14px">Quando a tecnologia começa a travar a operação.</h2>
+        <p>O problema raramente é apenas técnico. Ele aparece no atraso de uma decisão, na planilha que ninguém domina, no dado que não chega a tempo ou no sistema que já não acompanha a empresa.</p>
+      </div>
+      <div class="cards-2 reveal">
+        <div class="issue-card"><span class="n">01</span><h3>O sistema ficou menor que a operação</h3><p>Processos mudaram, equipes cresceram e as regras do negócio já não cabem nas limitações atuais.</p></div>
+        <div class="issue-card"><span class="n">02</span><h3>Informação presa em planilhas e atalhos</h3><p>Dados duplicados, aprovações manuais e dependência de pessoas específicas tornam cada decisão mais lenta.</p></div>
+        <div class="issue-card"><span class="n">03</span><h3>Sistemas que não conversam entre si</h3><p>ERP, CRM, APIs e aplicações internas criam retrabalho quando a integração não acompanha a realidade da empresa.</p></div>
+        <div class="issue-card"><span class="n">04</span><h3>Tecnologia sem um próximo passo claro</h3><p>A necessidade de evoluir é evidente, mas ainda faltam prioridades, escopo e uma direção técnica segura.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A RESPOSTA -->
+  <section class="section section-alt" id="solucoes">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="mono-label">02 / A resposta</span>
+        <h2 style="margin-top:14px;max-width:44rem">A solução certa começa pelo problema que precisa ser resolvido.</h2>
+        <p>A Vision parte do contexto do negócio para definir o caminho técnico. Desenvolvimento, integração, evolução e automação são meios — não fins.</p>
+      </div>
+      <div class="cards-solutions reveal">
+        <div class="solution-card">
+          <div class="top-row"><span class="code">A.01</span></div>
+          <h3>Software sob medida</h3>
+          <p>Sistemas desenvolvidos para os processos, regras e objetivos que diferenciam a sua operação.</p>
+          <button class="cta" data-scroll-to="diagnostico">Avaliar este cenário →</button>
+        </div>
+        <div class="solution-card">
+          <div class="top-row"><span class="code">A.02</span></div>
+          <h3>Sistemas corporativos</h3>
+          <p>Plataformas e aplicações para centralizar fluxos, áreas e decisões com mais controle.</p>
+          <button class="cta" data-scroll-to="diagnostico">Avaliar este cenário →</button>
+        </div>
+        <div class="solution-card">
+          <div class="top-row"><span class="code">A.03</span></div>
+          <h3>Integração de sistemas</h3>
+          <p>Conexão entre APIs, dados e ferramentas existentes para reduzir ruído e retrabalho.</p>
+          <button class="cta" data-scroll-to="diagnostico">Avaliar este cenário →</button>
+        </div>
+        <div class="solution-card">
+          <div class="top-row"><span class="code">A.04</span></div>
+          <h3>Automação e IA aplicada</h3>
+          <p>Automação ligada a dados e processos reais — não uma ferramenta isolada da operação.</p>
+          <button class="cta" data-scroll-to="diagnostico">Avaliar este cenário →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O CAMINHO -->
+  <section class="section section-dark" id="processo">
+    <div class="container" style="display:grid;gap:40px">
+      <div class="reveal">
+        <span class="mono-label" style="color:var(--primary)">03 / O caminho</span>
+        <h2 style="margin-top:14px;color:#fff;font-size:clamp(1.6rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.035em">Da complexidade ao próximo passo com clareza.</h2>
+        <p style="margin-top:14px;max-width:32rem;color:var(--foreground-on-dark);font-size:1rem;line-height:1.6">Você não precisa chegar com todos os requisitos prontos. O diagnóstico existe para organizar a decisão antes de investir tempo e orçamento na execução.</p>
+        <button class="btn btn-secondary" style="margin-top:24px" data-scroll-to="diagnostico">Agendar diagnóstico</button>
+      </div>
+      <div class="steps-list reveal">
+        <div class="step-row"><span class="num">01</span><div><h3>Mapeamos o cenário</h3><p>Entendemos operação, sistemas atuais, restrições e o resultado esperado.</p></div></div>
+        <div class="step-row"><span class="num">02</span><div><h3>Damos forma ao problema</h3><p>Organizamos prioridades, dependências, riscos e a melhor primeira entrega.</p></div></div>
+        <div class="step-row"><span class="num">03</span><div><h3>Definimos o caminho</h3><p>Indicamos a direção para desenvolver, integrar, modernizar ou automatizar.</p></div></div>
+        <div class="step-row"><span class="num">04</span><div><h3>Planejamos a execução</h3><p>Transformamos a decisão em escopo, roadmap, diagnóstico técnico ou proposta.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRITERIO DE FIT -->
+  <section class="section section-light">
+    <div class="container" style="display:grid;gap:44px">
+      <div class="reveal">
+        <span class="mono-label">04 / Critério de fit</span>
+        <h2 style="margin-top:14px;max-width:30rem">Uma boa conversa começa com um problema que vale resolver.</h2>
+        <p>A primeira reunião é mais produtiva quando existe uma operação relevante a melhorar, alguém próximo à decisão e vontade de construir um caminho estruturado.</p>
+      </div>
+      <div class="fit-card reveal">
+        <div class="fit-card-head"><span class="mono-label">Este diagnóstico faz sentido se...</span></div>
+        <ul class="fit-list">
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#6a8252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Existe um processo relevante que precisa ganhar controle, velocidade ou integração.</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#6a8252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Há uma pessoa de tecnologia, operações, produto ou gestão envolvida na decisão.</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#6a8252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>A solução terá impacto em uma área, unidade ou operação da empresa.</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#6a8252" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>A empresa quer avaliar um projeto com um horizonte de execução definido.</li>
+        </ul>
+        <div class="fit-note">Esta página não é destinada a cursos, vagas, downloads, licenças de software pronto ou suporte doméstico.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="section section-dark" id="diagnostico">
+    <div class="container form-section-grid">
+      <div class="reveal">
+        <span class="mono-label" style="color:var(--primary)">04.1 / alternativa</span>
+        <h2 style="margin-top:14px;color:#fff;font-size:clamp(1.4rem,3vw,2.1rem);font-weight:800;letter-spacing:-.035em;max-width:26rem">Prefere deixar o contexto para a equipe?</h2>
+        <p style="margin-top:14px;max-width:28rem;color:var(--foreground-on-dark);font-size:.95rem;line-height:1.6">Use este formulário curto se você estiver em reunião, preferir contato por e-mail ou quiser registrar uma necessidade antes de conversar no WhatsApp.</p>
+      </div>
+
+      <div class="form-card reveal">
+        <form id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="f-nome">Nome e empresa</label>
+            <input class="form-input" type="text" id="f-nome" name="nome" placeholder="Seu nome / empresa" autocomplete="name" required>
+            <p class="form-error" id="err-nome">Digite seu nome e empresa.</p>
+          </div>
+          <div class="form-field">
+            <label for="f-email">E-mail corporativo</label>
+            <input class="form-input" type="email" id="f-email" name="email" placeholder="nome@empresa.com.br" autocomplete="email" required>
+            <p class="form-error" id="err-email">Digite um e-mail válido.</p>
+          </div>
+          <div class="form-field">
+            <label for="f-mensagem">O que precisa ser resolvido?</label>
+            <textarea class="form-textarea" id="f-mensagem" name="mensagem" placeholder="Descreva em poucas linhas o desafio da operação." required></textarea>
+            <p class="form-error" id="err-mensagem">Conte rapidamente o que precisa.</p>
+          </div>
+          <button type="submit" class="btn btn-dark btn-block" id="submit-btn">Enviar contexto</button>
+        </form>
+        <div class="form-success" id="form-success">
+          <p style="font-size:1.1rem;font-weight:700;color:var(--ink)">Contexto enviado.</p>
+          <p style="margin-top:8px;font-size:.9rem;color:var(--foreground)">Nossa equipe entra em contato em breve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section section-alt">
+    <div class="container reveal" style="max-width:44rem">
+      <span class="mono-label">05 / Próximo passo</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,4.4vw,3rem);font-weight:800;letter-spacing:-.04em">Tem um sistema para construir, evoluir ou integrar?</h2>
+      <p style="margin-top:16px;font-size:1.05rem;line-height:1.6;color:var(--foreground)">Conte o que está travando a sua operação. A Vision Software ajuda a transformar o desafio em um caminho claro de tecnologia e negócio.</p>
+      <a class="btn btn-dark" style="margin-top:28px" href="https://wa.me/5532999575926?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Vision%20Software%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20software." target="_blank" rel="noopener" data-track="whatsapp">Falar no WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5F4EC'/%3E%3Cpath d='M14 18l14 30h8l14-30h-9l-9 21-9-21z' fill='%230B1522'/%3E%3C/svg%3E" alt="Vision Software">
+        <span class="name">VISION <span style="color:var(--primary);font-weight:400">/ software</span></span>
+      </div>
+      <p class="footer-desc">Tecnologia, processo e engenharia para empresas que precisam de sistemas mais claros, evolutivos e conectados à operação.</p>
+    </div>
+    <div class="footer-meta">
+      <span>Juiz de Fora, MG · Brasil</span>
+      <span>(32) 99957-5926</span>
+      <span>© <span id="year"></span> Vision Software</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-primary btn-block" href="https://wa.me/5532999575926?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Vision%20Software%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20software." target="_blank" rel="noopener" data-track="whatsapp">Falar no WhatsApp</a>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+  // Scroll suave pros botoes "Prefiro enviar o contexto" / "Avaliar este cenario"
+  document.querySelectorAll('[data-scroll-to]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var target = document.getElementById(el.getAttribute('data-scroll-to'));
+      if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+</script>
+
+<script>
+  // Rastreamento: Meta Pixel (Contact) + conversao Google Ads em qualquer clique de WhatsApp
+  document.querySelectorAll('[data-track="whatsapp"]').forEach(function(link){
+    link.addEventListener('click', function(){
+      if (typeof fbq === 'function') { fbq('track', 'Contact', { content_name: 'Site Novo - WhatsApp' }); }
+      if (typeof gtag === 'function') { gtag('event', 'conversion', { 'send_to': 'AW-18399561420/n9qACIi2ieUcEMyNzMVE' }); }
+    });
+  });
+</script>
+
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("contact-form");
+  var successBox = document.getElementById("form-success");
+  var submitBtn = document.getElementById("submit-btn");
+
+  var fields = {
+    nome: { el: document.getElementById("f-nome"), err: document.getElementById("err-nome") },
+    email: { el: document.getElementById("f-email"), err: document.getElementById("err-email") },
+    mensagem: { el: document.getElementById("f-mensagem"), err: document.getElementById("err-mensagem") }
+  };
+
+  function setError(field, show) {
+    field.el.setAttribute("aria-invalid", show ? "true" : "false");
+    field.err.classList.toggle("is-visible", show);
+  }
+
+  function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var nome = fields.nome.el.value.trim();
+    var email = fields.email.el.value.trim();
+    var mensagem = fields.mensagem.el.value.trim();
+
+    var ok = true;
+    if (nome.length < 2) { setError(fields.nome, true); ok = false; } else { setError(fields.nome, false); }
+    if (!validEmail(email)) { setError(fields.email, true); ok = false; } else { setError(fields.email, false); }
+    if (mensagem.length < 5) { setError(fields.mensagem, true); ok = false; } else { setError(fields.mensagem, false); }
+    if (!ok) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
+
+    // Envia pro webhook do Supabase (mesmo endpoint usado na integracao Make/Facebook Lead Ads)
+    fetch("https://qoptwkmnyrjatcamrfxd.supabase.co/functions/v1/pipeline-webhook/58ab921f9ef4c59ac30d64ebb0a10e97ca28ca6973a5d02f", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        source: "site-vision-novo",
+        nome: nome,
+        email: email,
+        mensagem: mensagem,
+        page_url: window.location.href,
+        submitted_at: new Date().toISOString()
+      })
+    }).catch(function (e) {
+      console.error("Falha ao enviar lead pro webhook:", e);
+    }).finally(function () {
+      if (typeof fbq === "function") { fbq('track', 'Lead', { content_name: 'Site Novo - Formulario' }); }
+      if (typeof gtag === "function") {
+        gtag('event', 'conversion', { 'send_to': 'AW-18399561420/l_TSCMWqiuUcEMyNzMVE' });
+      }
+      form.style.display = "none";
+      successBox.classList.add("is-visible");
+    });
+  });
+})();
+</script>
+
+<script>
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+</script>
+
+</body>
+</html>
