@@ -583,6 +583,11 @@ src="https://www.facebook.com/tr?id=1061255206487231&ev=PageView&noscript=1"
             <p class="form-error" id="err-email">Digite um e-mail válido.</p>
           </div>
           <div class="form-field">
+            <label for="f-telefone">Telefone / WhatsApp</label>
+            <input class="form-input" type="tel" id="f-telefone" name="telefone" placeholder="(32) 99999-9999" autocomplete="tel" required>
+            <p class="form-error" id="err-telefone">Digite um telefone válido.</p>
+          </div>
+          <div class="form-field">
             <label for="f-mensagem">O que precisa ser resolvido?</label>
             <textarea class="form-textarea" id="f-mensagem" name="mensagem" placeholder="Descreva em poucas linhas o desafio da operação." required></textarea>
             <p class="form-error" id="err-mensagem">Conte rapidamente o que precisa.</p>
@@ -661,6 +666,7 @@ src="https://www.facebook.com/tr?id=1061255206487231&ev=PageView&noscript=1"
   var fields = {
     nome: { el: document.getElementById("f-nome"), err: document.getElementById("err-nome") },
     email: { el: document.getElementById("f-email"), err: document.getElementById("err-email") },
+    telefone: { el: document.getElementById("f-telefone"), err: document.getElementById("err-telefone") },
     mensagem: { el: document.getElementById("f-mensagem"), err: document.getElementById("err-mensagem") }
   };
 
@@ -670,38 +676,55 @@ src="https://www.facebook.com/tr?id=1061255206487231&ev=PageView&noscript=1"
   }
 
   function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function validPhone(v) { return v.replace(/\D/g, "").length >= 10; }
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     var nome = fields.nome.el.value.trim();
     var email = fields.email.el.value.trim();
+    var telefone = fields.telefone.el.value.trim();
     var mensagem = fields.mensagem.el.value.trim();
 
     var ok = true;
     if (nome.length < 2) { setError(fields.nome, true); ok = false; } else { setError(fields.nome, false); }
     if (!validEmail(email)) { setError(fields.email, true); ok = false; } else { setError(fields.email, false); }
+    if (!validPhone(telefone)) { setError(fields.telefone, true); ok = false; } else { setError(fields.telefone, false); }
     if (mensagem.length < 5) { setError(fields.mensagem, true); ok = false; } else { setError(fields.mensagem, false); }
     if (!ok) return;
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Enviando...";
 
+    var payload = JSON.stringify({
+      source: "site-vision-novo",
+      nome: nome,
+      email: email,
+      telefone: telefone,
+      mensagem: mensagem,
+      page_url: window.location.href,
+      submitted_at: new Date().toISOString()
+    });
+
     // Envia pro webhook do Supabase (mesmo endpoint usado na integracao Make/Facebook Lead Ads)
-    fetch("https://qoptwkmnyrjatcamrfxd.supabase.co/functions/v1/pipeline-webhook/58ab921f9ef4c59ac30d64ebb0a10e97ca28ca6973a5d02f", {
+    var envio1 = fetch("https://qoptwkmnyrjatcamrfxd.supabase.co/functions/v1/pipeline-webhook/58ab921f9ef4c59ac30d64ebb0a10e97ca28ca6973a5d02f", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        source: "site-vision-novo",
-        nome: nome,
-        email: email,
-        mensagem: mensagem,
-        page_url: window.location.href,
-        submitted_at: new Date().toISOString()
-      })
+      body: payload
     }).catch(function (e) {
-      console.error("Falha ao enviar lead pro webhook:", e);
-    }).finally(function () {
+      console.error("Falha ao enviar lead pro webhook 1:", e);
+    });
+
+    // Envia tambem pro segundo webhook do Supabase
+    var envio2 = fetch("https://qoptwkmnyrjatcamrfxd.supabase.co/functions/v1/pipeline-webhook/d768a1043073bc6abe7e89d57bc60b2a50ae9c678665b433", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: payload
+    }).catch(function (e) {
+      console.error("Falha ao enviar lead pro webhook 2:", e);
+    });
+
+    Promise.all([envio1, envio2]).finally(function () {
       if (typeof fbq === "function") { fbq('track', 'Lead', { content_name: 'Site Novo - Formulario' }); }
       if (typeof gtag === "function") {
         gtag('event', 'conversion', { 'send_to': 'AW-18399561420/l_TSCMWqiuUcEMyNzMVE' });
