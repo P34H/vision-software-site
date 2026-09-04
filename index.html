@@ -589,6 +589,17 @@ src="https://www.facebook.com/tr?id=1061255206487231&ev=PageView&noscript=1"
             <p class="form-error" id="err-telefone">Digite um telefone válido.</p>
           </div>
           <div class="form-field">
+            <label for="f-orcamento">Orçamento estimado para o projeto</label>
+            <select class="form-input" id="f-orcamento" name="orcamento">
+              <option value="">Prefiro não informar agora</option>
+              <option value="ate-25k">Até R$25 mil</option>
+              <option value="25k-50k">R$25 mil a R$50 mil</option>
+              <option value="50k-100k">R$50 mil a R$100 mil</option>
+              <option value="acima-100k">Acima de R$100 mil</option>
+              <option value="nao-sei">Ainda não sei — preciso de orientação</option>
+            </select>
+          </div>
+          <div class="form-field">
             <label for="f-mensagem">O que precisa ser resolvido?</label>
             <textarea class="form-textarea" id="f-mensagem" name="mensagem" placeholder="Descreva em poucas linhas o desafio da operação." required></textarea>
             <p class="form-error" id="err-mensagem">Conte rapidamente o que precisa.</p>
@@ -685,6 +696,7 @@ src="https://www.facebook.com/tr?id=1061255206487231&ev=PageView&noscript=1"
     var nome = fields.nome.el.value.trim();
     var email = fields.email.el.value.trim();
     var telefone = fields.telefone.el.value.trim();
+    var orcamento = document.getElementById("f-orcamento").value;
     var mensagem = fields.mensagem.el.value.trim();
 
     var ok = true;
@@ -702,6 +714,7 @@ src="https://www.facebook.com/tr?id=1061255206487231&ev=PageView&noscript=1"
       nome: nome,
       email: email,
       telefone: telefone,
+      orcamento: orcamento,
       mensagem: mensagem,
       page_url: window.location.href,
       submitted_at: new Date().toISOString()
